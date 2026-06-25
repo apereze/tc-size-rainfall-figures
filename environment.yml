@@ -1,0 +1,53 @@
+name: tc-size-rainfall
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+
+  # Core scientific stack
+  - numpy
+  - pandas
+  - scipy
+  - xarray
+  - dask
+  - netcdf4
+  - h5netcdf
+  - bottleneck
+
+  # Geospatial stack
+  - geopandas
+  - shapely
+  - pyproj
+  - fiona
+  - rasterio
+  - rioxarray
+  - regionmask
+  - cartopy
+
+  # Plotting
+  - matplotlib
+  - seaborn
+  - cmcrameri
+  - cmocean
+
+  # Statistics
+  - statsmodels
+  - scikit-learn
+
+  # Notebooks and utilities
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - tqdm
+  - pyyaml
+  - rich
+
+  # Development
+  - pytest
+  - black
+  - ruff
+  - isort
+  - pip
+
+  - pip:
+      - -e .

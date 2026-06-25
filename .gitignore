@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+.ipynb_checkpoints/
+
+# Data
+data/raw/*
+data/interim/*
+data/processed/*
+data/external/*
+!data/**/.gitkeep
+
+# Outputs
+outputs/figures/*
+outputs/tables/*
+!outputs/**/.gitkeep
+
+# Large scientific files
+*.nc
+*.grib
+*.grb
+*.tif
+*.tiff
+*.h5
+*.hdf
+*.zarr/
+*.gpkg
+*.parquet
+*.csv
+*.xlsx
+
+# OS
+.DS_Store
+Thumbs.db
