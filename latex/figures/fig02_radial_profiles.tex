@@ -1,0 +1,66 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{rne}{HTML}{1B9E77}
+\definecolor{rnw}{HTML}{D95F02}
+\definecolor{rsw}{HTML}{7570B3}
+\definecolor{rse}{HTML}{E7298A}
+\definecolor{td}{HTML}{66A61E}
+\definecolor{ts}{HTML}{E6AB02}
+\definecolor{minhur}{HTML}{A6761D}
+\definecolor{majhur}{HTML}{666666}
+\newcommand{\dataDir}{data/figure_inputs}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 2, horizontal sep=1.2cm, vertical sep=1.25cm},
+  width=7.0cm,
+  height=5.0cm,
+  xmin=0, xmax=2000,
+  ymin=0,
+  xlabel={Distance from TC center (km)},
+  ylabel={Rainfall (mm)},
+  tick align=outside,
+  ymajorgrids=true,
+  grid style={gray!20},
+  legend style={draw=none, font=\small},
+]
+
+\nextgroupplot[title={\textbf{A.} North Atlantic by quadrant}]
+\addplot+[no markers, thick, color=rne] table[x=x,y=RNE,col sep=comma] {\dataDir/NAQ_wide.csv};
+\addlegendentry{RNE}
+\addplot+[no markers, thick, color=rnw] table[x=x,y=RNW,col sep=comma] {\dataDir/NAQ_wide.csv};
+\addlegendentry{RNW}
+\addplot+[no markers, thick, color=rsw] table[x=x,y=RSW,col sep=comma] {\dataDir/NAQ_wide.csv};
+\addlegendentry{RSW}
+\addplot+[no markers, thick, color=rse] table[x=x,y=RSE,col sep=comma] {\dataDir/NAQ_wide.csv};
+\addlegendentry{RSE}
+
+\nextgroupplot[title={\textbf{B.} Eastern Pacific by quadrant}]
+\addplot+[no markers, thick, color=rne] table[x=x,y=RNE,col sep=comma] {\dataDir/EPQ_wide.csv};
+\addplot+[no markers, thick, color=rnw] table[x=x,y=RNW,col sep=comma] {\dataDir/EPQ_wide.csv};
+\addplot+[no markers, thick, color=rsw] table[x=x,y=RSW,col sep=comma] {\dataDir/EPQ_wide.csv};
+\addplot+[no markers, thick, color=rse] table[x=x,y=RSE,col sep=comma] {\dataDir/EPQ_wide.csv};
+
+\nextgroupplot[title={\textbf{C.} North Atlantic by intensity}]
+\addplot+[no markers, thick, color=td] table[x=x,y=TD,col sep=comma] {\dataDir/NAcat_wide.csv};
+\addlegendentry{TD}
+\addplot+[no markers, thick, color=ts] table[x=x,y=TS,col sep=comma] {\dataDir/NAcat_wide.csv};
+\addlegendentry{TS}
+\addplot+[no markers, thick, color=minhur] table[x=x,y=MIN_HUR,col sep=comma] {\dataDir/NAcat_wide.csv};
+\addlegendentry{Minor hurricane}
+\addplot+[no markers, thick, color=majhur] table[x=x,y=MAJ_HUR,col sep=comma] {\dataDir/NAcat_wide.csv};
+\addlegendentry{Major hurricane}
+
+\nextgroupplot[title={\textbf{D.} Eastern Pacific by intensity}]
+\addplot+[no markers, thick, color=td] table[x=x,y=TD,col sep=comma] {\dataDir/EPcat_wide.csv};
+\addplot+[no markers, thick, color=ts] table[x=x,y=TS,col sep=comma] {\dataDir/EPcat_wide.csv};
+\addplot+[no markers, thick, color=minhur] table[x=x,y=MIN_HUR,col sep=comma] {\dataDir/EPcat_wide.csv};
+\addplot+[no markers, thick, color=majhur] table[x=x,y=MAJ_HUR,col sep=comma] {\dataDir/EPcat_wide.csv};
+
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "description": "Manifest for manuscript figure reproduction scripts, required local inputs, and generated outputs.",
+  "figures": [
+    {
+      "id": "fig01",
+      "label": "Figure 1",
+      "title": "TC structural properties by basin/category",
+      "script": "figures/fig01_structure_boxplots.py",
+      "latex_source": "latex/figures/fig01_structure_boxplots.tex",
+      "status": "latex_ready",
+      "required_inputs": [
+        "data/figure_inputs/fig01_boxplot_stats.csv",
+        "data/figure_inputs/fig01_category_counts.csv"
+      ],
+      "outputs": [
+        "outputs/figures/fig01_structure_boxplots.png",
+        "outputs/figures/fig01_structure_boxplots.pdf"
+      ]
+    },
+    {
+      "id": "fig02",
+      "label": "Figure 2",
+      "title": "Radial rainfall profiles",
+      "script": "figures/fig02_radial_profiles.py",
+      "latex_source": "latex/figures/fig02_radial_profiles.tex",
+      "status": "implemented",
+      "required_inputs": [
+        "data/figure_inputs/NAQ.csv",
+        "data/figure_inputs/EPQ.csv",
+        "data/figure_inputs/NAcat.csv",
+        "data/figure_inputs/EPcat.csv",
+        "data/figure_inputs/NAQ_wide.csv",
+        "data/figure_inputs/EPQ_wide.csv",
+        "data/figure_inputs/NAcat_wide.csv",
+        "data/figure_inputs/EPcat_wide.csv"
+      ],
+      "outputs": [
+        "outputs/figures/fig02_radial_profiles.png",
+        "outputs/figures/fig02_radial_profiles.pdf"
+      ]
+    },
+    {
+      "id": "fig03",
+      "label": "Figure 3",
+      "title": "Seasonal maps of precipitation and TC structure",
+      "script": "figures/fig03_seasonal_maps.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/seasonal_precip_structure_grids.*"],
+      "outputs": [
+        "outputs/figures/fig03_seasonal_maps.png",
+        "outputs/figures/fig03_seasonal_maps.pdf"
+      ]
+    },
+    {
+      "id": "fig04",
+      "label": "Figure 4",
+      "title": "Mean radius versus accumulated precipitation",
+      "script": "figures/fig04_radius_precip_scatter.py",
+      "latex_source": "latex/figures/fig04_radius_precip_scatter.tex",
+      "status": "latex_ready",
+      "required_inputs": [
+        "data/figure_inputs/fig04_radius_precip_scatter.csv",
+        "data/figure_inputs/fig04_scatter/NA_TD.csv",
+        "data/figure_inputs/fig04_scatter/NA_TS.csv",
+        "data/figure_inputs/fig04_scatter/NA_MIN_HUR.csv",
+        "data/figure_inputs/fig04_scatter/NA_MAJ_HUR.csv",
+        "data/figure_inputs/fig04_scatter/EP_TD.csv",
+        "data/figure_inputs/fig04_scatter/EP_TS.csv",
+        "data/figure_inputs/fig04_scatter/EP_MIN_HUR.csv",
+        "data/figure_inputs/fig04_scatter/EP_MAJ_HUR.csv"
+      ],
+      "outputs": [
+        "outputs/figures/fig04_radius_precip_scatter.png",
+        "outputs/figures/fig04_radius_precip_scatter.pdf"
+      ]
+    },
+    {
+      "id": "fig05",
+      "label": "Figure 5",
+      "title": "Radial-quadrant distribution of extreme events",
+      "script": "figures/fig05_extreme_radial_quadrants.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/extreme_events_radial_quadrants.*"],
+      "outputs": [
+        "outputs/figures/fig05_extreme_radial_quadrants.png",
+        "outputs/figures/fig05_extreme_radial_quadrants.pdf"
+      ]
+    },
+    {
+      "id": "fig06",
+      "label": "Figure 6",
+      "title": "Distance distribution of extreme events",
+      "script": "figures/fig06_extreme_distance_histograms.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/extreme_event_distances.*"],
+      "outputs": [
+        "outputs/figures/fig06_extreme_distance_histograms.png",
+        "outputs/figures/fig06_extreme_distance_histograms.pdf"
+      ]
+    },
+    {
+      "id": "fig07",
+      "label": "Figure 7",
+      "title": "Trends in TC structural variables",
+      "script": "figures/fig07_structure_trends.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/annual_structure_trends.*"],
+      "outputs": [
+        "outputs/figures/fig07_structure_trends.png",
+        "outputs/figures/fig07_structure_trends.pdf"
+      ]
+    },
+    {
+      "id": "fig08",
+      "label": "Figure 8",
+      "title": "Environmental composites for R1-R2",
+      "script": "figures/fig08_environment_composites_r1_r2.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/environment_composites_r1_r2.*"],
+      "outputs": [
+        "outputs/figures/fig08_environment_composites_r1_r2.png",
+        "outputs/figures/fig08_environment_composites_r1_r2.pdf"
+      ]
+    },
+    {
+      "id": "fig09",
+      "label": "Figure 9",
+      "title": "Environmental composites for R3-R4",
+      "script": "figures/fig09_environment_composites_r3_r4.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/environment_composites_r3_r4.*"],
+      "outputs": [
+        "outputs/figures/fig09_environment_composites_r3_r4.png",
+        "outputs/figures/fig09_environment_composites_r3_r4.pdf"
+      ]
+    },
+    {
+      "id": "fig10",
+      "label": "Figure 10",
+      "title": "Mixed layer depth anomalies",
+      "script": "figures/fig10_mld_anomalies.py",
+      "status": "placeholder",
+      "required_inputs": ["data/processed/mld_anomaly_composites.*"],
+      "outputs": [
+        "outputs/figures/fig10_mld_anomalies.png",
+        "outputs/figures/fig10_mld_anomalies.pdf"
+      ]
+    }
+  ]
+}

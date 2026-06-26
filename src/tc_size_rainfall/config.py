@@ -7,6 +7,7 @@ RAW_DIR = DATA_DIR / "raw"
 INTERIM_DIR = DATA_DIR / "interim"
 PROCESSED_DIR = DATA_DIR / "processed"
 EXTERNAL_DIR = DATA_DIR / "external"
+FIGURE_INPUT_DIR = DATA_DIR / "figure_inputs"
 
 OUTPUT_DIR = ROOT / "outputs"
 FIGURE_DIR = OUTPUT_DIR / "figures"
@@ -29,6 +30,15 @@ CATEGORY_ORDER = [
     "MIN_HUR",
     "MAJ_HUR",
 ]
+
+CATEGORY_LABELS = {
+    "TD": "TD",
+    "TS": "TS",
+    "MIN HUR": "Minor hurricane",
+    "MIN_HUR": "Minor hurricane",
+    "MAJ HUR": "Major hurricane",
+    "MAJ_HUR": "Major hurricane",
+}
 
 SEASON_GROUPS = {
     "MJJ": [5, 6],

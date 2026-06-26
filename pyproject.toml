@@ -11,6 +11,9 @@ authors = [
 ]
 requires-python = ">=3.11"
 
+[project.urls]
+Repository = "https://github.com/apereze/tc-size-rainfall-figures"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
@@ -24,3 +27,7 @@ target-version = ["py311"]
 
 [tool.isort]
 profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
