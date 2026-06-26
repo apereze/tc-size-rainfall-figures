@@ -33,6 +33,7 @@ dependencies:
   # Statistics
   - statsmodels
   - scikit-learn
+  - pymannkendall
 
   # Notebooks and utilities
   - jupyterlab
@@ -41,6 +42,9 @@ dependencies:
   - tqdm
   - pyyaml
   - rich
+  - cfgrib
+  - eccodes
+  - tectonic
 
   # Development
   - pytest

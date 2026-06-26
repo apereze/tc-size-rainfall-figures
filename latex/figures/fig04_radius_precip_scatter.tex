@@ -1,0 +1,45 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{td}{HTML}{66A61E}
+\definecolor{ts}{HTML}{E6AB02}
+\definecolor{minhur}{HTML}{A6761D}
+\definecolor{majhur}{HTML}{B23A48}
+\newcommand{\dataDir}{data/figure_inputs/fig04_scatter}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=1.3cm},
+  width=7.2cm,
+  height=5.6cm,
+  xlabel={Average radius (km)},
+  ylabel={Accumulated precipitation (mm)},
+  tick align=outside,
+  ymajorgrids=true,
+  xmajorgrids=true,
+  grid style={gray!20},
+  legend style={draw=none, at={(0.5,-0.24)}, anchor=north, legend columns=4},
+]
+
+\nextgroupplot[title={\textbf{A.} North Atlantic}]
+\addplot+[only marks, mark=*, mark size=1.1pt, color=td, fill=td, opacity=0.85, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/NA_TD.csv};
+\addlegendentry{TD}
+\addplot+[only marks, mark=*, mark size=1.4pt, color=ts, fill=ts, opacity=0.75, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/NA_TS.csv};
+\addlegendentry{TS}
+\addplot+[only marks, mark=*, mark size=1.7pt, color=minhur, fill=minhur, opacity=0.60, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/NA_MIN_HUR.csv};
+\addlegendentry{Minor hurricane}
+\addplot+[only marks, mark=*, mark size=2.0pt, color=majhur, fill=majhur, opacity=0.50, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/NA_MAJ_HUR.csv};
+\addlegendentry{Major hurricane}
+
+\nextgroupplot[title={\textbf{B.} Eastern Pacific}, ylabel={}]
+\addplot+[only marks, mark=*, mark size=1.1pt, color=td, fill=td, opacity=0.85, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/EP_TD.csv};
+\addplot+[only marks, mark=*, mark size=1.4pt, color=ts, fill=ts, opacity=0.75, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/EP_TS.csv};
+\addplot+[only marks, mark=*, mark size=1.7pt, color=minhur, fill=minhur, opacity=0.60, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/EP_MIN_HUR.csv};
+\addplot+[only marks, mark=*, mark size=2.0pt, color=majhur, fill=majhur, opacity=0.50, draw=black] table[x=Rp,y=accumulated_precipitation_mm,col sep=comma] {\dataDir/EP_MAJ_HUR.csv};
+
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

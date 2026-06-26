@@ -18,7 +18,12 @@ data/raw/*
 data/interim/*
 data/processed/*
 data/external/*
+data/figure_inputs/*
 !data/**/.gitkeep
+!data/figure_inputs/*.md
+!data/figure_inputs/**/*.md
+!data/figure_inputs/**/*.csv
+!data/figure_inputs/**/
 
 # Outputs
 outputs/figures/*
@@ -38,6 +43,12 @@ outputs/tables/*
 *.parquet
 *.csv
 *.xlsx
+
+# Curated lightweight inputs for exact figure panels
+!data/figure_inputs/*.csv
+!data/figure_inputs/**/*.csv
+!data/figure_inputs/**/*.md
+!data/figure_inputs/**/
 
 # OS
 .DS_Store
